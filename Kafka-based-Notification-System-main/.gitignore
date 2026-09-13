@@ -1,0 +1,30 @@
+﻿# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editor files
+.idea/
+.vscode/
+*.iml
+
+# Node / Frontend
+**/node_modules/
+**/dist/
+**/dist-ssr/
+*.tsbuildinfo
+
+# Java / Maven
+**/target/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local

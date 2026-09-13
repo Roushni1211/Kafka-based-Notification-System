@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --google-blue: #1a73e8;
+    --google-red: #ea4335;
+    --google-yellow: #fbbc04;
+    --google-green: #34a853;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    letter-spacing: 0.01em;
+  }
+}
+
+/* Google-Style Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 128, 128, 0.45);
+}
+
+@layer components {
+  /* Material 3 / Google Workspace Button Styles */
+  .google-btn-primary {
+    @apply bg-[#1a73e8] hover:bg-[#1557b0] text-white font-medium px-6 py-2.5 rounded-full transition-all duration-200 shadow-google-sm hover:shadow-google-md active:scale-[0.98] flex items-center justify-center gap-2;
+  }
+
+  .google-btn-tonal {
+    @apply bg-[#e8f0fe] hover:bg-[#d2e3fc] text-[#1a73e8] dark:bg-[#1c3aa9]/30 dark:hover:bg-[#1c3aa9]/50 dark:text-[#8ab4f8] font-medium px-5 py-2.5 rounded-full transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2;
+  }
+
+  .google-btn-outlined {
+    @apply border border-[#dadce0] dark:border-[#3c4043] hover:bg-[#f1f3f4] dark:hover:bg-[#28292a] text-[#1a73e8] dark:text-[#8ab4f8] font-medium px-5 py-2.5 rounded-full transition-all duration-200 active:scale-[0.98] flex items-center justify-center gap-2;
+  }
+
+  /* Floating Google Input Style */
+  .google-input {
+    @apply w-full bg-transparent border border-[#dadce0] dark:border-[#3c4043] focus:border-[#1a73e8] dark:focus:border-[#8ab4f8] rounded-2xl py-3 px-4 text-[#202124] dark:text-[#e3e3e3] placeholder-[#80868b] dark:placeholder-[#9aa0a6] outline-none transition-all duration-200 focus:ring-1 focus:ring-[#1a73e8] dark:focus:ring-[#8ab4f8];
+  }
+
+  .google-input-with-icon {
+    padding-left: 2.85rem !important;
+  }
+
+  .google-input-with-action {
+    padding-right: 2.85rem !important;
+  }
+
+  /* Google Workspace Pill Search Bar */
+  .google-search-pill {
+    @apply bg-[#f1f3f4] dark:bg-[#1e1f20] hover:bg-[#e8eaed] dark:hover:bg-[#28292a] border border-transparent focus-within:border-transparent focus-within:bg-white dark:focus-within:bg-[#28292a] focus-within:shadow-google-md rounded-full px-4 py-2.5 flex items-center gap-3 transition-all duration-200;
+  }
+}
+
+/* Safe area insets for mobile gesture bars & notch */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+@keyframes googleProgress {
+  0% { transform: translateX(-100%) scaleX(0.2); }
+  50% { transform: translateX(0%) scaleX(0.6); }
+  100% { transform: translateX(100%) scaleX(0.2); }
+}
+
+.animate-google-progress {
+  transform-origin: 0% 50%;
+  animation: googleProgress 1.4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slick Google Compose Opening Animation - Slides up from below the screen */
+@keyframes composeModalIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%) scale(0.92);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.008);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-compose-in {
+  animation: composeModalIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity;
+}
+
+/* Modal Spring Dialog Entrance - Punchy Elastic Pop */
+@keyframes modalPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.88) translateY(28px);
+  }
+  68% {
+    opacity: 1;
+    transform: scale(1.015) translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-pop {
+  animation: modalPopIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity;
+}
+
+/* Dropdown & Popover Opening */
+@keyframes dropdownPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(-14px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.015) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-dropdown-pop {
+  transform-origin: top right;
+  animation: dropdownPopIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity;
+}
+
+/* Toast Spring Slide Up */
+@keyframes toastSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(36px) scale(0.92);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.015);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-toast-in {
+  animation: toastSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity;
+}
+
+/* Smooth Tab Content Fade-In */
+@keyframes tabFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tab-fade {
+  animation: tabFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) both !important;
+  will-change: transform, opacity;
+}
+

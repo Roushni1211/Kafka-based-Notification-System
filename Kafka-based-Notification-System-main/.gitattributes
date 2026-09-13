@@ -1,0 +1,6 @@
+# Treat compiled frontend assets inside Spring Boot static resources as generated/vendored
+Backend/src/main/resources/static/** linguist-generated=true
+Backend/src/main/resources/static/** linguist-vendored=true
+
+# Ignore lockfiles and metadata in language statistics
+frontend/package-lock.json linguist-generated=true

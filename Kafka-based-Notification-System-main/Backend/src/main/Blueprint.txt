@@ -1,0 +1,19 @@
+
+=== COMPANY & MEMBERSHIP (/api/company) ===
+POST   /api/company/create                   - Create new company [DONE]
+POST   /api/company/join                     - Join via joinCode [DONE]
+GET    /api/company/my-companies             - List my companies [DONE]
+GET    /api/company/{companyId}              - Get company details[DONE]
+PUT    /api/company/{companyId}              - update company details[DONE]
+GET    /api/company/{companyId}/members      - View company members[DONE]
+POST   /api/company/{companyId}/invite       - Invite employee email[DONE]
+POST   /api/company/{companyId}/accept       - Accept company invite[DONE]
+DELETE /api/company/{companyId}/remove/{id}  - Remove company employee [DONE]
+
+=== MESSAGING & ANNOUNCEMENTS (/api/messages) ===
+POST   /api/messages/send                    - Send/reply message[DONE]
+GET    /api/messages/company/{companyId}     - Fetch company channel[DONE]
+GET    /api/messages/inbox                   - Fetch my inbox [DONE]
+GET    /api/messages/sent                    - Fetch sent messages [DONE]
+PUT    /api/messages/{messageId}             - Mark message read [DONE]
+

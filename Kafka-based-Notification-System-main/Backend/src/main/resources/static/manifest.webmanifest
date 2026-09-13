@@ -1,0 +1,47 @@
+{
+  "name": "Relay Workspace",
+  "short_name": "Relay",
+  "description": "Event-Driven Workspace Messaging and Team Spaces Hub",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#131314",
+  "theme_color": "#1a73e8",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Compose Message",
+      "short_name": "Compose",
+      "description": "Send a new company message",
+      "url": "/?action=compose",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "Company Channel",
+      "short_name": "Channel",
+      "description": "View Company Announcements",
+      "url": "/channel",
+      "icons": [{ "src": "/icons/icon.svg", "sizes": "any" }]
+    }
+  ],
+  "categories": ["business", "productivity", "social"]
+}
